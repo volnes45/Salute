@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulwama Martyrs Tribute</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <img src="images/soldier-salute.png" alt="Soldier Saluting" class="header-image">
+        <h1>Tribute to Our Brave Soldiers</h1>
+        <p>In memory of the martyrs of the Pulwama attack (14th Feb 2019)</p>
+    </header>
+
+    <section class="tribute">
+        <h2>Honoring Our Heroes</h2>
+        <img src="images/amar-jawan.jpg" alt="Amar Jawan Jyoti" class="tribute-image">
+        <p>These brave soldiers sacrificed their lives for our nation. We will never forget their sacrifice. 🇮🇳</p>
+
+        <div class="martyrs-list">
+            <h3>Our Bravehearts</h3>
+            <ul id="martyrs"></ul>
+        </div>
+
+        <!-- Salute Button Section -->
+        <div class="salute-section">
+            <h3>Pay Your Tribute</h3>
+            <button onclick="saluteSoldiers()">Salute 🇮🇳</button>
+            <p id="salute-count">Total Salutes: 0</p>
+        </div>
+
+        <div class="quote-section">
+            <h3>Inspirational Quotes</h3>
+            <p id="quote">"The blood of the martyrs is the seed of freedom." 🇮🇳</p>
+            <button onclick="changeQuote()">Next Quote</button>
+        </div>
+
+        <div class="pulwama-story">
+            <h2>The Story of Pulwama Attack</h2>
+            <p>On **14th February 2019**, a **suicide bomber** attacked a convoy of **CRPF personnel** in **Pulwama, Jammu & Kashmir**. The attack was carried out using a vehicle loaded with **explosives**, crashing into a bus carrying our brave soldiers.</p>
+            <p>**40 CRPF soldiers** were martyred in this cowardly act. The attack led to national mourning, and in response, the **Indian Air Force (IAF) conducted the Balakot airstrike** to target terrorist camps in Pakistan.</p>
+            <p>This incident remains one of the **darkest days in Indian history**, reminding us of the price of our freedom and the **sacrifices of our armed forces**. 🇮🇳</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>We will never forget their sacrifice. 🇮🇳 Jai Hind!</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
