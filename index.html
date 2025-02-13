@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulwama Martyrs Tribute</title>
+    <link rel="stylesheet" href="style.css">
+<style type="text/css" id="dcoder_stylesheet">/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #1a1a1a, #4d4d4d, #1a1a1a);
+    color: white;
+    text-align: center;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.5);
+}
+
+.header-image {
+    width: 100px;
+    height: auto;
+}
+
+/* Tribute Section */
+.tribute {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.tribute-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+h1, h2 {
+    color: #ff3333;
+}
+
+/* Salute Section */
+.salute-section {
+    margin: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+#salute-count {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Button */
+button {
+    background: #ff3333;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.
+</style></head>
+<body>
+
+    <header>
+        <img src="images/soldier-salute.png" alt="Soldier Saluting" class="header-image">
+        <h1>Tribute to Our Brave Soldiers</h1>
+        <p>In memory of the martyrs of the Pulwama attack (14th Feb 2019)</p>
+    </header>
+
+    <section class="tribute">
+        <h2>Honoring Our Heroes</h2>
+        <img src="images/amar-jawan.jpg" alt="Amar Jawan Jyoti" class="tribute-image">
+        <p>These brave soldiers sacrificed their lives for our nation. We will never forget their sacrifice. 🇮🇳</p>
+
+        <div class="martyrs-list">
+            <h3>Our Bravehearts</h3>
+            <ul id="martyrs"></ul>
+        </div>
+
+        <!-- Salute Button Section -->
+        <div class="salute-section">
+            <h3>Pay Your Tribute</h3>
+            <button onclick="saluteSoldiers()">Salute 🇮🇳</button>
+            <p id="salute-count">Total Salutes: 0</p>
+        </div>
+
+        <div class="quote-section">
+            <h3>Inspirational Quotes</h3>
+            <p id="quote">"The blood of the martyrs is the seed of freedom." 🇮🇳</p>
+            <button onclick="changeQuote()">Next Quote</button>
+        </div>
+
+        <div class="pulwama-story">
+            <h2>The Story of Pulwama Attack</h2>
+            <p>On **14th February 2019**, a **suicide bomber** attacked a convoy of **CRPF personnel** in **Pulwama, Jammu &amp; Kashmir**. The attack was carried out using a vehicle loaded with **explosives**, crashing into a bus carrying our brave soldiers.</p>
+            <p>**40 CRPF soldiers** were martyred in this cowardly act. The attack led to national mourning, and in response, the **Indian Air Force (IAF) conducted the Balakot airstrike** to target terrorist camps in Pakistan.</p>
+            <p>This incident remains one of the **darkest days in Indian history**, reminding us of the price of our freedom and the **sacrifices of our armed forces**. 🇮🇳</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>We will never forget their sacrifice. 🇮🇳 Jai Hind!</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+<script type="text/javascript" id="dcoder_script">// List of martyrs
+const martyrs = [
+    "CRPF Constable Sanjay Kumar Sinha",
+    "CRPF Constable Ratan Kumar Thakur",
+    "CRPF Constable Naseer Ahmed",
+    "CRPF Head Constable Naseer Ahmed",
+    "CRPF Constable Vijay Soreng",
+    "CRPF Constable Kulwinder Singh",
+    "CRPF Constable Tilak Raj",
+    "CRPF Constable Rohitash Lamba",
+    "CRPF Constable Sukhjinder Singh",
+    "CRPF Constable Vasantha Kumar",
+    "CRPF Constable Jaimal Singh"
+];
+
+// Adding martyrs names dynamically
+const martyrList = document.getElementById('martyrs');
+martyrs.forEach(name => {
+    const li = document.createElement('li');
+    li.textContent = name;
+    martyrList.appendChild(li);
+});
+
+// Inspirational Quotes
+const quotes = [
+    "The blood of the martyrs is the seed of freedom. 🇮🇳",
+    "A soldier dies not when he is shot, but when he is forgotten.",
+    "We owe our soldiers more than we can ever repay.",
+    "They gave their today for our tomorrow. We salute them!"
+];
+
+let currentQuoteIndex = 0;
+function changeQuote() {
+    currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+    document.getElementById('quote').innerText = quotes[currentQuoteIndex];
+}
+
+// Load salute count from localStorage (if available)
+let saluteCount = localStorage.getItem('saluteCount') ? parseInt(localStorage.getItem('saluteCount')) : 0;
+document.getElementById('salute-count').innerText = `Total Salutes: ${saluteCount}`;
+
+// Function to handle salute button click
+function saluteSoldiers() {
+    saluteCount++;
+    document.getElementById('salute-count').innerText = `Total Salutes: ${saluteCount}`;
+    
+    // Save updated count to localStorage
+    localStorage.setItem('saluteCount', saluteCount);
+}
+</script></body></html>
